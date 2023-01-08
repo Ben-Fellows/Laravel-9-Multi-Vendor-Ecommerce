@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -60,6 +61,12 @@ class AdminController extends Controller
         }
         // Store photo in the DB
         $data->save();
-        return redirect()->back();
+
+        $notification = array(
+            'message' => 'Admin Profile Details Updated Successully.',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 }
