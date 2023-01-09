@@ -76,7 +76,7 @@ class AdminController extends Controller
         return view('admin.admin_change_password');
     }
 
-    public function AdminUpdatePassword(Request $request){
+    public function AdminUpdatePassword(Request $request) {
         $request->validate([
             'old_password' => 'required',
             'new_password' => 'required|confirmed', 
