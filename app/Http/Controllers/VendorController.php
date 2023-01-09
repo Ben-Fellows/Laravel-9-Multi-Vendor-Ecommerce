@@ -17,6 +17,7 @@ class VendorController extends Controller
         return view('vendor.vendor_login');
     }
 
+    // Vendor logout
     public function VendorDestroy(Request $request) {
         Auth::guard('web')->logout();
 
@@ -27,7 +28,7 @@ class VendorController extends Controller
         return redirect('/vendor/login');
     }
 
-    // Access all admin details
+    // Access all vendor details
     public function VendorProfile() {
         $id = Auth::user()->id;
         
@@ -36,7 +37,7 @@ class VendorController extends Controller
         return view('vendor.vendor_profile_view', compact('vendorData'));
     }
 
-     // Update all admin details
+     // Update all vendor details
      public function VendorProfileStore(Request $request) {
         $id = Auth::user()->id;
         $data = User::find($id);
@@ -69,4 +70,29 @@ class VendorController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Update vendor password
+    public function VendorChangePassword() {
+        return view('vendor.vendor_change_password');
+    }
+    
+    public function VendorUpdatePassword(Request $request) {
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed', 
+        ]);
+
+        // Check if the old password inputted is correct
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+            return back()->with("error", "Old Password Does Not Match.");
+        }
+
+        // Update the user's password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+
+        ]);
+        return back()->with("status", "Password Successfully Updated.");
+
+    } 
 }
