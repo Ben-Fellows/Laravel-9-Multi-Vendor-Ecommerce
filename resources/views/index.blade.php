@@ -165,7 +165,8 @@
                                       <h5>Account Details</h5>
                                   </div>
                                   <div class="card-body">
-                                      <form method="post" name="enq">
+                                    <form method="POST" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
+                                        @csrf
                                           <div class="row">
                                               <div class="form-group col-md-6">
                                                   <label>User Name <span class="required">*</span></label>
@@ -189,7 +190,7 @@
                                               </div>
                                               <div class="form-group col-md-12">
                                                   <label>Photo <span class="required">*</span></label>
-                                                  <input class="form-control" name="photo" type="file" id="image" />
+                                                  <input class="form-control pt-10" name="photo" type="file" id="image" />
                                               </div>
                                               <div class="form-group col-md-12">       
                                                 <img id="showImage" src="{{ (!empty($userData->photo)) ? url('upload/user_images/'.$userData->photo):url('upload/user_images/no_image.jpg') }}" alt="User photo" class="rounded-circle p-1 bg-secondary" width="150" height="150" style="object-fit: cover;">
