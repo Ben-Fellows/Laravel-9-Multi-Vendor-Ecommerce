@@ -155,11 +155,12 @@
                               <a href="page-account.html">
                                   <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-user.svg') }}" />
                               </a>
-                              <a href="page-account.html"><span class="lable ml-0">Account</span></a>
+                              @auth
+                                <a href="page-account.html"><span class="lable ml-0">Account</span></a>
                               <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                   <ul>
                                       <li>
-                                          <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                          <a href="{{ route('dashboard')}}"><i class="fi fi-rs-user mr-10"></i>My Account</a>
                                       </li>
                                       <li>
                                           <a href="page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a>
@@ -177,7 +178,12 @@
                                           <a href="page-login.html"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
                                       </li>
                                   </ul>
-                              </div>
+                              </div>  
+                              @else <a href="{{ route('login') }}"><span class="lable ">Login</span></a>
+                              <span class="lable" style="margin-left: 2px; margin-right: 2px;">  </span>
+                              <a href="{{ route('register') }}"><span class="lable ">Register</span></a>
+                              @endauth
+                              
                           </div>
                       </div>
                   </div>
