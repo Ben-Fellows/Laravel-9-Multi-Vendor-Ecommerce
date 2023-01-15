@@ -56,6 +56,11 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
+        $notification = array(
+            'message' => 'Logged Out Successully.',
+            'alert-type' => 'success'
+        );
+
         return redirect('/login');
     }
 
