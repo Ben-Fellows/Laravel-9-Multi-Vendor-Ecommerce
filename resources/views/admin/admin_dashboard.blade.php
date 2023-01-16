@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="{{ asset('admin_backend/assets/css/dark-theme.css') }} " />
 	<link rel="stylesheet" href="{{ asset('admin_backend/assets/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('admin_backend/assets/css/header-colors.css') }}" />
+	<!-- Data Table -->
+	<link href="{{ asset('admin_backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
 	{{-- Toastr --}}
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 	<title>Admin Dashboard</title>
@@ -171,7 +173,14 @@
 			  $(".knob").knob();
 		  });
 	  </script>
+		<!--Data Table-->
+		<script src="{{ asset('admin_backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 	  <script src="{{ asset('admin_backend/assets/js/index.js') }}"></script>
+		<script>
+			$(document).ready(function() {
+				$('#example').DataTable();
+				} );
+		</script>
 	<!--App JS-->
 	<script src="{{ asset('admin_backend/assets/js/app.js') }}"></script>
 	{{-- Toastr --}}
