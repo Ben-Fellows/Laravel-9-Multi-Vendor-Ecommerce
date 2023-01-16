@@ -28,7 +28,7 @@
             <ul>
                 <li> <a href="{{ route('all.brands') }}"><i class="bx bx-right-arrow-alt"></i>All Brands</a>
                 </li>
-                <li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>Create Brand</a>
+                <li> <a href="{{ route('create.brand')}}"><i class="bx bx-right-arrow-alt"></i>Create Brand</a>
                 </li>
             </ul>
         </li>
