@@ -26,14 +26,14 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('store.brand') }}" enctype="multipart/form-data">
+                            <form method="POST" id="myForm" action="{{ route('store.brand') }}" enctype="multipart/form-data">
                                 @csrf
                                 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Brand Name</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
+                                    <div class="col-sm-9 text-secondary form-group">
                                         <input type="text" class="form-control" name="brand_name" />
                                     </div>
                                 </div>
@@ -69,6 +69,35 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                brand_name: {
+                    required : true,
+                }, 
+            },
+            messages :{
+                brand_name: {
+                    required : 'Please Enter Brand Name',
+                },
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 
 <script type="text/javascript">
     $(document).ready(function() {

@@ -173,6 +173,8 @@
 			  $(".knob").knob();
 		  });
 	  </script>
+		{{-- Validate JS --}}
+		<script src="{{ asset('admin_backend/assets/js/validate.min.js') }}"></script>
 		<!--Data Table-->
 		<script src="{{ asset('admin_backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 	  <script src="{{ asset('admin_backend/assets/js/index.js') }}"></script>
