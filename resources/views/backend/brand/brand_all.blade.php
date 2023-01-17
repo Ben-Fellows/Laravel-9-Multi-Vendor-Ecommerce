@@ -44,12 +44,10 @@
           </thead>
           <tbody>
             @foreach ($brands as $key => $brand)
-                
-            
             <tr>
               <td>{{ $key+1 }}</td>
               <td>{{ $brand->brand_name}}</td>
-              <td><img src="{{ asset('$brand->brand_image') }}" style="width: 70px; height: 40px;" alt="Brand image"></td>
+              <td><img src="{{ asset($brand->brand_image) }}" style="width: 70px; height: 40px;" alt="Brand image"></td>
               <td>
                 <a href="" class="btn btn-info">Edit</a>
                 <a href="" class="btn btn-danger">Delete</a>
