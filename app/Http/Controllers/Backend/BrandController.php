@@ -76,7 +76,7 @@ class BrandController extends Controller
             ]);
 
             $notification = array(
-                'message' => 'Brand Name and Image Updated Successully.',
+                'message' => 'Brand Name and Image Updated Successfully.',
                 'alert-type' => 'success'
             );
 
@@ -88,11 +88,28 @@ class BrandController extends Controller
             ]);
 
             $notification = array(
-                'message' => 'Brand Name Updated Successully.',
+                'message' => 'Brand Name Updated Successfully.',
                 'alert-type' => 'success'
             );
 
             return redirect()->route('all.brands')->with($notification);
         }
+    }
+    
+    // Delete brand
+    public function DeleteBrand($id) {
+        $brand = Brand::findOrFail($id);
+        $image = $brand->brand_image;
+        // Delete image from the folder
+        unlink($image);
+        // Delete from the DB
+        Brand::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Brand Deleted Successfully.',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 }
