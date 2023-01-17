@@ -49,7 +49,7 @@
               <td>{{ $brand->brand_name}}</td>
               <td><img src="{{ asset($brand->brand_image) }}" style="width: 70px; height: 40px;" alt="Brand image"></td>
               <td>
-                <a href="" class="btn btn-info">Edit</a>
+                <a href="{{ route('edit.brand', $brand->id) }}" class="btn btn-secondary">Edit</a>
                 <a href="" class="btn btn-danger">Delete</a>
               </td>
             </tr>
