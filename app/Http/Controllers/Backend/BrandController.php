@@ -36,7 +36,7 @@ class BrandController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Brande Created Successully.',
+            'message' => 'Brand Created Successfully.',
             'alert-type' => 'success'
         );
 
