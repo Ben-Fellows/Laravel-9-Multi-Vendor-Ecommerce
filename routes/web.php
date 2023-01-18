@@ -7,6 +7,7 @@ use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,18 @@ Route::middleware(['auth', 'role:admin'])->group(function() {
         Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
         Route::post('/update/category', 'UpdateCategory')->name('update.category');
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    });
+});
+
+// Admin sub category routes
+Route::middleware(['auth', 'role:admin'])->group(function() {
+    Route::controller(SubCategoryController::class)->group(function() {
+        Route::get('/all/subcategory', 'AllSubCategories')->name('all.subcategories');
+        Route::get('/create/subcategory', 'CreateSubCategory')->name('create.subcategory');
+        Route::post('/store/subcategory', 'StoreSubCategory')->name('store.subcategory');
+        Route::get('/edit/subcategory/{id}', 'EditSubCategory')->name('edit.subcategory');
+        Route::post('/update/subcategory', 'UpdateSubCategory')->name('update.subcategory');
+        Route::get('/delete/subcategory/{id}', 'DeleteSubCategory')->name('delete.subcategory');
     });
 });
 
