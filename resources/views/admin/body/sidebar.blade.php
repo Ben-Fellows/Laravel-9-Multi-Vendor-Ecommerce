@@ -19,6 +19,7 @@
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
+        {{-- Brand menu --}}
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
@@ -32,6 +33,7 @@
                 </li>
             </ul>
         </li>
+        {{-- Category menu --}}
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
@@ -42,6 +44,20 @@
                 <li> <a href="{{ route('all.categories') }}"><i class="bx bx-right-arrow-alt"></i>All Categories</a>
                 </li>
                 <li> <a href="{{ route('create.category') }}"><i class="bx bx-right-arrow-alt"></i>Create Category</a>
+                </li>
+            </ul>
+        </li>
+        {{-- Sub category menu --}}
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Sub Category</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.subcategories') }}"><i class="bx bx-right-arrow-alt"></i>All Sub Categories</a>
+                </li>
+                <li> <a href="{{ route('create.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Create Sub Category</a>
                 </li>
             </ul>
         </li>
