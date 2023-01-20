@@ -43,7 +43,7 @@
               <td>{{ $inactiveVendor->vendor_join }}</td>
               <td><span class="btn btn-secondary">{{ $inactiveVendor->status }}</span></td>
               <td>
-                <a href="" class="btn btn-info">Vendor Details</a>
+                <a href="{{ route('inactive.vendor.details', $inactiveVendor->id) }}" class="btn btn-info">Vendor Details</a>
               </td>
             </tr>
             @endforeach
