@@ -2,6 +2,8 @@
 @section('user')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+{{-- Toastr --}}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 <div class="page-header breadcrumb-wrap">
   <div class="container">
       <div class="breadcrumb">
@@ -199,7 +201,7 @@
                                                 <img id="showImage" src="{{ (!empty($userData->photo)) ? url('upload/user_images/'.$userData->photo):url('upload/user_images/no_image.jpg') }}" alt="User photo" class="rounded-circle p-1 bg-secondary" width="150" height="150" style="object-fit: cover;">
                                             </div>
                                               <div class="col-md-12">
-                                                  <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit" value="Submit">Save Change</button>
+                                                  <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit" value="Submit">Save Changes</button>
                                               </div>
                                           </div>
                                       </form>
@@ -257,6 +259,30 @@
       </div>
   </div>
 </div>
+{{-- Toastr --}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type','info') }}"
+    switch(type){
+       case 'info':
+       toastr.info(" {{ Session::get('message') }} ");
+       break;
+   
+       case 'success':
+       toastr.success(" {{ Session::get('message') }} ");
+       break;
+   
+       case 'warning':
+       toastr.warning(" {{ Session::get('message') }} ");
+       break;
+   
+       case 'error':
+       toastr.error(" {{ Session::get('message') }} ");
+       break; 
+    }
+    @endif 
+   </script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#image').change(function(e) {

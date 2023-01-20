@@ -95,4 +95,10 @@ class AdminController extends Controller
         return back()->with("status", "Password Successfully Updated.");
 
     } 
+
+    // Get inactive vendors
+    public function InactiveVendors() {
+        $inactiveVendors = User::where('status', 'inactive')->where('role', 'vendor')->latest()->get();
+        return view('backend.vendor.inactive_vendors', compact('inactiveVendors'));
+    }
 }

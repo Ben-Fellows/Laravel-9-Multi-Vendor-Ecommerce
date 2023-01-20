@@ -91,14 +91,6 @@
                                         <input type="file" class="form-control" id="image" name="photo" />
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0"></h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <img id="showImage" src="{{ (!empty($adminData->photo)) ? url('upload/admin_images/'.$adminData->photo):url('upload/admin_images/no_image.jpg') }}" alt="Admin" style="width: 120px; height: 100px;">
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">

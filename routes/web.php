@@ -39,7 +39,6 @@ Route::middleware(['auth', 'role:admin'])->group(function() {
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
-
 });
 
 // Vendor routes
@@ -50,6 +49,11 @@ Route::middleware(['auth', 'role:vendor'])->group(function() {
     Route::post('/vendor/profile/store', [VendorController::class, 'VendorProfileStore'])->name('vendor.profile.store');
     Route::get('/vendor/change/password', [VendorController::class, 'VendorChangePassword'])->name('vendor.change.password');
     Route::post('/vendor/update/password', [VendorController::class, 'VendorUpdatePassword'])->name('vendor.update.password');
+});
+
+// Vendor inactive and active admin routes
+Route::controller(AdminController::class)->group(function() {
+    Route::get('inactive/vendors', 'InactiveVendors')->name('inactive.vendors');
 });
 
 // Login

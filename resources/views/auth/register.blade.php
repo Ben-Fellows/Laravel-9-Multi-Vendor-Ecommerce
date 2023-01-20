@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
@@ -141,9 +141,9 @@
     <script src="{{ asset('frontend/assets/js/main.js?v=5.3') }}"></script>
     <script src="{{ asset('frontend/assets/js/shop.js?v=5.3') }}"></script>
 </body>
-</html>
+</html> --}}
 
-{{-- <x-guest-layout>
+<x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -194,4 +194,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout> --}}
+</x-guest-layout>
