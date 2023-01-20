@@ -54,6 +54,7 @@ Route::middleware(['auth', 'role:vendor'])->group(function() {
 // Vendor inactive and active admin routes
 Route::controller(AdminController::class)->group(function() {
     Route::get('inactive/vendors', 'InactiveVendors')->name('inactive.vendors');
+    Route::get('active/vendors', 'ActiveVendors')->name('active.vendors');
 });
 
 // Login

@@ -4,19 +4,19 @@
 <div class="page-content">
   <!--breadcrumb-->
   <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-    <div class="breadcrumb-title pe-3">All Inactive Vendors</div>
+    <div class="breadcrumb-title pe-3">All Active Vendors</div>
     <div class="ps-3">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0 p-0">
           <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">Inactive Vendors</li>
+          <li class="breadcrumb-item active" aria-current="page">Active Vendors</li>
         </ol>
       </nav>
     </div>
   </div>
   <!--end breadcrumb-->
-  <h6 class="mb-0 text-uppercase">All Inactive Vendors</h6>
+  <h6 class="mb-0 text-uppercase">All Active Vendors</h6>
   <hr/>
   <div class="card">
     <div class="card-body">
@@ -34,14 +34,14 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($inactiveVendors as $key => $inactiveVendor)
+            @foreach ($activeVendors as $key => $activeVendor)
             <tr>
               <td>{{ $key+1 }}</td>
-              <td>{{ $inactiveVendor->name }}</td>
-              <td>{{ $inactiveVendor->username }}</td>
-              <td>{{ $inactiveVendor->email }}</td>
-              <td>{{ $inactiveVendor->vendor_join }}</td>
-              <td><span class="btn btn-secondary">{{ $inactiveVendor->status }}</span></td>
+              <td>{{ $activeVendor->name }}</td>
+              <td>{{ $activeVendor->username }}</td>
+              <td>{{ $activeVendor->email }}</td>
+              <td>{{ $activeVendor->vendor_join }}</td>
+              <td><span class="btn btn-success">{{ $activeVendor->status }}</span></td>
               <td>
                 <a href="" class="btn btn-info">Vendor Details</a>
               </td>

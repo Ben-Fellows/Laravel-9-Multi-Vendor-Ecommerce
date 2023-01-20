@@ -101,4 +101,10 @@ class AdminController extends Controller
         $inactiveVendors = User::where('status', 'inactive')->where('role', 'vendor')->latest()->get();
         return view('backend.vendor.inactive_vendors', compact('inactiveVendors'));
     }
+
+    // Get active vendors
+    public function ActiveVendors() {
+        $activeVendors = User::where('status', 'active')->where('role', 'vendor')->latest()->get();
+        return view('backend.vendor.active_vendors', compact('activeVendors'));
+    }
 }
