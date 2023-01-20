@@ -56,7 +56,9 @@ Route::controller(AdminController::class)->group(function() {
     Route::get('inactive/vendors', 'InactiveVendors')->name('inactive.vendors');
     Route::get('active/vendors', 'ActiveVendors')->name('active.vendors');
     Route::get('inactive/vendor/details/{id}', 'InactiveVendorDetails')->name('inactive.vendor.details');
+    Route::get('active/vendor/details/{id}', 'ActiveVendorDetails')->name('active.vendor.details');
     Route::post('active/vendor/approve', 'ActiveVendorApprove')->name('active.vendor.approve');
+    Route::post('inactive/vendor/approve', 'inactiveVendorApprove')->name('inactive.vendor.approve');
 });
 
 // Login
