@@ -50,9 +50,12 @@
           </tbody>
           <tfoot>
             <tr>
-              <th>Sub Category Number</th>
-              <th>Category Name</th>
-              <th>Sub Category Image</th>
+              <th>Vendor ID</th>
+              <th>Vendor Store Name</th>
+              <th>Vendor Username</th>
+              <th>Vendor Email</th>
+              <th>Vendor Join Date</th>
+              <th>Vendor Status</th>
               <th>Action</th>
             </tr>
           </tfoot>
