@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +102,12 @@ Route::middleware(['auth', 'role:admin'])->group(function() {
         Route::post('/update/subcategory', 'UpdateSubCategory')->name('update.subcategory');
         Route::get('/delete/subcategory/{id}', 'DeleteSubCategory')->name('delete.subcategory');
     });
+});
+
+// Product routes
+Route::controller(ProductController::class)->group(function() {
+    Route::get('all/products', 'AllProducts')->name('all.products');
+    Route::get('create/products', 'CreateProducts')->name('create.products');
 });
 
 

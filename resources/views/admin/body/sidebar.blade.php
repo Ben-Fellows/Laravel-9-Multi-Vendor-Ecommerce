@@ -69,9 +69,9 @@
                 <div class="menu-title">Manage Products</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.subcategories') }}"><i class="bx bx-right-arrow-alt"></i>All Products</a>
+                <li> <a href="{{ route('all.products') }}"><i class="bx bx-right-arrow-alt"></i>All Products</a>
                 </li>
-                <li> <a href="{{ route('create.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Create Products</a>
+                <li> <a href="{{ route('create.products') }}"><i class="bx bx-right-arrow-alt"></i>Create Product</a>
                 </li>
             </ul>
         </li>
