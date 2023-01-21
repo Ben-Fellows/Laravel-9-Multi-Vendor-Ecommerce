@@ -61,12 +61,26 @@
                 </li>
             </ul>
         </li>
-        {{-- <li class="menu-label">UI Elements</li> --}}
+        {{-- Products --}}
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manage Products</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.subcategories') }}"><i class="bx bx-right-arrow-alt"></i>All Products</a>
+                </li>
+                <li> <a href="{{ route('create.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Create Products</a>
+                </li>
+            </ul>
+        </li>
+        {{-- <li class="menu-label">Vendors</li> --}}
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
-                <div class="menu-title">Vendor Manage</div>
+                <div class="menu-title">Manage Vendors</div>
             </a>
             <ul>
                 <li> <a href="{{ route('inactive.vendors') }}"><i class="bx bx-right-arrow-alt"></i>Inactive Vendors</a>
